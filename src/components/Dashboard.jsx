@@ -1,17 +1,19 @@
 import { Link } from "react-router"
 import { Menu, Search, Plus,Bell, LayoutDashboard, Calendar, Toolbox, Settings, LogOut, ChevronRight} from "lucide-react"
 import defaultPfpPNG from "../assets/react.svg"
-import logoPNG from "../assets/logo.png"
 import styles from "../style/Dashboard.module.css"
 import {useState } from "react"
 
+import {NavBar } from "./Navbar"
 export function Dashboard() {
     
     const [showSideBar, setShowSideBar] = useState(true)
     
     return (
         <div className={styles.page}>
-            <div >
+            
+            { showSideBar && <NavBar setShowSideBar={setShowSideBar}/>}
+            <div>
                 <header className={styles.header}>
                     
                     { !showSideBar && <button className={styles.navBtn} onClick={() => {
@@ -46,37 +48,6 @@ export function Dashboard() {
                     </main>
                 </div>
             </div>
-            {showSideBar && <nav data-testid="navbar">
-                <div className={styles.logoContainer}>
-                    <img className={styles.logoImg} src={logoPNG} alt="" />
-                </div>
-                <div className={styles.navBtns}>
-                    <button>
-                        <LayoutDashboard /> <p>Dashboard</p>
-                    </button>
-                    <button>
-                        <Calendar/> <p>Calendar</p>
-                        </button>
-                    <button>
-                        <Toolbox/> <p>Work</p>
-                    </button>
-                    <button>
-                        <Settings/> <p>Settings</p>
-                    </button>
-                </div>
-                <div className={styles.navSetting}>
-                    <button>
-                        <LogOut/> <p>Logout</p>
-                    </button>
-                </div>
-
-                <button data-testid="close-nav-btn" onClick={() => {
-                    setShowSideBar(false);
-                }} className={styles.closeNavBtn}>
-                    <ChevronRight/>
-                </button>
-
-            </nav>}
         </div>
     )
 }
