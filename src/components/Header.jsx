@@ -4,7 +4,7 @@ import defaultPfpPNG from "../assets/react.svg"
 
 export function Header({showSideBar, setShowSideBar}) {
     return (
-        <header className={styles.header}>        
+        <header className={showSideBar ? styles.headerSmall : styles.header}>        
             { !showSideBar && <button className={styles.navBtn} onClick={() => {
                 setShowSideBar(true);
             }} data-testid="open-nav-btn">

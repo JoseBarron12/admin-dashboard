@@ -9,7 +9,7 @@ export function Dashboard() {
     const [showSideBar, setShowSideBar] = useState(true)
     
     return (
-        <div className={styles.page}>
+        <div className={showSideBar ? styles.open : styles.close}>
             
             { showSideBar && <NavBar setShowSideBar={setShowSideBar}/>}
             
