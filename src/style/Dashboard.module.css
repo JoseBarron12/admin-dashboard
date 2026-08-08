@@ -1,70 +1,9 @@
-.header {
+.open {
     display: grid;
-    grid-template-columns: 1fr max-content;
-    justify-content: space-between;
-    align-items: center;
-    padding: 16px 64px 16px 32px;
-    border-bottom: 1px solid whitesmoke;
-}
-
-.headerLeft {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    align-items: center;
-    gap: 32px;
+    grid-template-columns: max-content 1fr;
 }
 
 
-.headerSearch {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    border: 1px solid black;
-    border-radius: 24px;
-    padding: 8px 16px;
-}
-
-.headerSearch > input{
-    background: none;
-    border: none;
-}
-
-.headerBtns {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-}
-
-.headerJobBtn {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    border-radius: 24px;
-    padding: 8px 24px;
-    border: none;
-    background-color: rgb(0, 0, 0);
-    color: white;
-}
-
-.headerNotiBtn {
-    background: rgb(224, 224, 224);
-    border: none;
-    border-radius: 24px;
-    padding: 8px;
-}
-
-.headerIcon {
-    width: 24px;
-    height: 24px;
-    stroke-width: 1.5;
-}
-.headerPfp {
-    background: blue;
-    border: none;
-    border-radius: 50%;
-    padding: 4px;
-}
-
-.headerPfp > img {
-    object-fit: cover;
+.close  {
+    display: block;
 }
