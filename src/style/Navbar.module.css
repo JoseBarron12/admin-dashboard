@@ -1,4 +1,4 @@
-nav {
+.close {
     height: 100vh;
     width: 275px;
     background: #000000;
@@ -9,7 +9,18 @@ nav {
     position: relative;
     box-shadow: 1px 1px 4px black;
     gap: 16px;
+    transform: translateX(-300px);
+    transition: transform 0.25s ease-out 2ms; 
+    position: absolute;
 }
+
+.open {
+    composes: close;
+    transform: translateX(0px);
+    position: relative;
+    transition: transform 0.25s ease-out 2ms;
+}
+
 
 .closeNavBtn {
     position: absolute;

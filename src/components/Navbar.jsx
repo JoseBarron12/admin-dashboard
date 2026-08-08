@@ -3,10 +3,10 @@ import logoPNG from "../assets/logo.png"
 import styles from "../style/Navbar.module.css"
 
 
-export function NavBar({setShowSideBar}) {
+export function NavBar({setShowSideBar, showSideBar}) {
     
     return (
-        <nav data-testid="navbar">
+        <nav className={showSideBar ? styles.open : styles.close} data-testid="navbar">
             <div className={styles.logoContainer}>
                 <img className={styles.logoImg} src={logoPNG} alt="" />
             </div>

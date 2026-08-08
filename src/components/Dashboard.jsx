@@ -11,7 +11,7 @@ export function Dashboard() {
     return (
         <div className={showSideBar ? styles.open : styles.close}>
             
-            { showSideBar && <NavBar setShowSideBar={setShowSideBar}/>}
+            <NavBar setShowSideBar={setShowSideBar} showSideBar={showSideBar}/>
             
             <div>
                 <Header showSideBar={showSideBar} setShowSideBar={setShowSideBar}/>
