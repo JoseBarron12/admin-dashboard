@@ -1,7 +1,6 @@
-import {LayoutDashboard, Calendar, Toolbox, Settings, LogOut, ChevronRight} from "lucide-react"
+import {LayoutDashboard, Calendar, Toolbox, Settings, LogOut, ChevronRight, Timer} from "lucide-react"
 import logoPNG from "../assets/logo.png"
 import styles from "../style/Navbar.module.css"
-
 
 export function NavBar({setShowSideBar, showSideBar}) {
     

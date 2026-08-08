@@ -90,3 +90,32 @@
 .navSetting > button:hover {
     background-color: rgb(77, 77, 77);
 }
+
+@media (max-width:1200px) {
+    .close {
+        width: max-content;
+        padding: 16px 32px 32px 16px;
+    }
+    
+}
+
+
+@media (max-width:750px) {
+    .close {
+        width: max-content;
+        padding: 16px 16px 32px 16px;
+    }
+    
+    .navBtns > button > p, .navSetting > button > p {
+        display: none;
+    }
+
+    .logoContainer {
+        height: 96px;
+        width: 24px;
+    }
+
+    .logoContainer > img {
+        display: none;
+    }
+}
