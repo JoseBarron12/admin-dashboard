@@ -8,7 +8,7 @@ export function Header({showSideBar, setShowSideBar}) {
             { !showSideBar && <button className={styles.navBtn} onClick={() => {
                 setShowSideBar(true);
             }} data-testid="open-nav-btn">
-                <Menu className={styles.headerIcon}/>
+                <Menu className={styles.headerBigIcon}/>
             </button>}
                     
             <div className={styles.headerLeft}>
@@ -26,7 +26,7 @@ export function Header({showSideBar, setShowSideBar}) {
                     </button>
                     
                     <button className={styles.headerNotiBtn}>
-                        <Bell className={styles.headerIcon}></Bell>
+                        <Bell className={styles.headerBigIcon}></Bell>
                     </button>
                             
                     <button className={styles.headerPfp}>
