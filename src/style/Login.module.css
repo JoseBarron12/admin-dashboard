@@ -1,0 +1,131 @@
+main {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+aside {
+
+}
+
+main > div {
+    background-color: black;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+section{
+    background-color: black;
+    color: white;
+    display: grid;
+    grid-template-rows: max-content 1fr;
+    gap: 32px;
+    padding: 128px;
+    flex-grow: 1;
+}
+
+
+section > form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+}
+
+fieldset {
+    border: none;
+}
+
+.formIcon {
+    width: 16px;
+    height: 16px;
+    stroke-width: 2;
+}
+
+.credentials {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: 16px;
+}
+
+
+.formInput {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.formInput > div {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    border: 1px solid rgb(92, 92, 92);
+    border-radius: 16px;
+    padding: 8px 16px;
+}
+
+input {
+    background: none;
+    border: none;
+    flex-grow: 1;
+}
+
+input::placeholder {
+    font-size: small;
+    color: rgb(124, 124, 124);
+}
+
+    
+.credentialSetting {
+    display: flex;
+    font-size: small;
+    justify-content: space-between;
+    align-items: center;
+    color: rgb(124, 124, 124);
+}
+
+.credentialSetting > div {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+[type=checkbox] {
+  appearance: none;
+  border: 1px solid rgb(124, 124, 124);
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+}
+
+[type=checkbox]:checked {
+    background-color: rgb(4, 0, 255);
+}
+
+
+form > button {
+    border: none;
+    background-color: white;
+    padding: 16px 0px;
+    color: black;
+    border-radius: 16px;
+    margin-top: 16px;
+    font-weight: bold;
+}
+
+.addSetting {
+    font-size: smaller;
+}
+
+.addSetting > p > a, .credentialSetting > a {
+    color: blue;
+}
+
+a:link, a:visited {
+    text-decoration: none;
+    color: inherit;
+}
+
+
