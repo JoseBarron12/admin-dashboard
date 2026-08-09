@@ -38,9 +38,9 @@ export function Login({}) {
                             </div>
                             <a href="#">Forgot Password?</a>
                         </fieldset>
-                        <button className={styles.loginBtn} onClick={(e) => {e.preventDefault()}}>
-                            <Link to="home">Sign In</Link>
-                        </button>
+                        <Link to="home" className={styles.loginBtn}>
+                            <p>Sign In</p>
+                        </Link>
                 
                     <div className={styles.addSetting}>
                         <p>Don't have an account? <a href="#" className={styles.link}>Sign up</a></p>

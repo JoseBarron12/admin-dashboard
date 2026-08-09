@@ -2,7 +2,7 @@
     width: 100vw;
     height: 100vh;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr minmax(max-content, 1fr);
 }
 
 .login > aside {
@@ -70,7 +70,13 @@
     background: none;
     border: none;
     flex-grow: 1;
+    color: white;
 }
+
+.loginInput:focus {
+    outline: none;
+}
+
 
 .loginInput::placeholder {
     font-size: small;
@@ -109,9 +115,15 @@
     border: none;
     background-color: white;
     padding: 16px 0px;
-    color: black;
     border-radius: 16px;
     margin-top: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loginBtn > p {
+    color: rgb(0, 0, 0);
     font-weight: bold;
 }
 
@@ -127,5 +139,30 @@ a:link, a:visited {
     text-decoration: none;
     color: inherit;
 }
+
+
+@media (max-width: 1200px) {
+    .loginSection {
+        padding: 32px;
+    }
+}
+
+@media (max-width: 750px) {
+    .loginSection {
+        padding: 64px;
+    }
+    
+    
+    .login {
+    grid-template-columns: 1fr;
+    }
+    
+    .login > aside {
+        display: none;
+    }
+
+
+}
+
 
 
