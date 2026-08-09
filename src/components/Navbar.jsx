@@ -1,7 +1,7 @@
 import {LayoutDashboard, Calendar, Toolbox, Settings, LogOut, ChevronRight, Timer} from "lucide-react"
 import logoPNG from "../assets/logo.png"
 import styles from "../style/Navbar.module.css"
-
+import { Link } from "react-router"
 export function NavBar({setShowSideBar, showSideBar}) {
     
     return (
@@ -28,11 +28,11 @@ export function NavBar({setShowSideBar, showSideBar}) {
                 </button>    
             </div>
                     
-            <div className={styles.navSetting}>
+            <Link to= "/" className={styles.navSetting}>
                 <button>
                     <LogOut/> <p>Logout</p>
                 </button>
-            </div>
+            </Link>
 
             <button data-testid="close-nav-btn" onClick={() => {
                 setShowSideBar(false);
