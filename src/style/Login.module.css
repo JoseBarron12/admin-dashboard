@@ -1,22 +1,22 @@
-main {
+.login {
     width: 100vw;
     height: 100vh;
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
 
-aside {
+.login > aside {
 
 }
 
-main > div {
+.login > div {
     background-color: black;
     color: white;
     display: flex;
     align-items: center;
 }
 
-section{
+.loginSection{
     background-color: black;
     color: white;
     display: grid;
@@ -27,14 +27,14 @@ section{
 }
 
 
-section > form {
+.loginSection > form {
     display: flex;
     flex-direction: column;
     gap: 16px;
 
 }
 
-fieldset {
+.loginSection > form > fieldset {
     border: none;
 }
 
@@ -66,13 +66,13 @@ fieldset {
     padding: 8px 16px;
 }
 
-input {
+.loginInput {
     background: none;
     border: none;
     flex-grow: 1;
 }
 
-input::placeholder {
+.loginInput::placeholder {
     font-size: small;
     color: rgb(124, 124, 124);
 }
@@ -105,7 +105,7 @@ input::placeholder {
 }
 
 
-form > button {
+.loginBtn {
     border: none;
     background-color: white;
     padding: 16px 0px;

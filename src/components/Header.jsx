@@ -44,7 +44,7 @@ export function Header({showSideBar, setShowSideBar}) {
                     <label htmlFor="search-query" className={styles.headerSearch}>
                         <Search className={styles.headerIcon}></Search>
                         <input type="search" name="search-query" id="search-query" 
-                        placeholder = {screenWidth <= 700 ? "" : screenWidth <= 1000 ? "Search" : "Search jobs, customers, etc..."} />
+                        placeholder = {screenWidth <= 700 ? "" : screenWidth <= 1200 ? "Search" : "Search jobs, customers, etc..."} />
                     </label>
                 </div>
                 

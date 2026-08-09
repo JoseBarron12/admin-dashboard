@@ -3,12 +3,12 @@ import styles from "../style/Login.module.css"
 import { Mail,Lock } from "lucide-react"
 export function Login({}) {
     return (
-        <main >
+        <main className={styles.login}>
             <aside>
 
             </aside>
             <div>
-                <section>
+                <section className={styles.loginSection}>
                     <h1>Log in</h1>
                     <form>
                         <fieldset className={styles.credentials}>
@@ -18,7 +18,7 @@ export function Login({}) {
                                 </label>
                                 <div>
                                     <Mail className={styles.formIcon}></Mail>
-                                    <input type="text" name="user-name" id="user-name" placeholder="Enter your email" />
+                                    <input className={styles.loginInput} type="text" name="user-name" id="user-name" placeholder="Enter your email" />
                                 </div>
                             </div>
                             <div className={styles.formInput}>
@@ -27,7 +27,7 @@ export function Login({}) {
                                 </label>
                                 <div>
                                     <Lock className={styles.formIcon}></Lock>
-                                    <input type="text" name="user-password" id="user-password" placeholder="Enter your password" />
+                                    <input className={styles.loginInput} type="text" name="user-password" id="user-password" placeholder="Enter your password" />
                                 </div>
                             </div>
                         </fieldset>
@@ -38,7 +38,7 @@ export function Login({}) {
                             </div>
                             <a href="#">Forgot Password?</a>
                         </fieldset>
-                        <button onClick={(e) => {e.preventDefault()}}>
+                        <button className={styles.loginBtn} onClick={(e) => {e.preventDefault()}}>
                             <Link to="home">Sign In</Link>
                         </button>
                 
