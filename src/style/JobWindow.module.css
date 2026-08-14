@@ -1,18 +1,21 @@
 .jobWindow {
     display: flex;
     flex-direction: column;
-    padding: 16px;
+    padding: 32px;
+    gap: 16px;
 }
 
 .jobWindowIcon {
-    stroke-width: 1.5;
+    stroke-width: 1.75;
+    width: 24px;
+    height: 24px;
 }
 
 .jobWindowHeader {
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid rgb(224, 224, 224);
-    padding-bottom: 8px;
+    padding-bottom: 16px;
 }
 
 .jobWindowHeaderTxt > h1 {
@@ -32,6 +35,99 @@
     
 }
 
-.jobForm > fieldset {
-    border: none;
+.jobForm {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr max-content max-content;
+    gap: 32px;
+    border-bottom: 1px solid rgb(224, 224, 224);
+    padding-bottom: 16px;
 }
+
+
+.jobForm > fieldset {
+    all: unset;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.jobFormIcon {
+    height: 16px;
+    width: 16px;
+    stroke-width: 2px;
+}
+
+
+.jobFormHeader {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.jobFormHeader > h2 {
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.jobFormInputBox, .scheduleFormSection > div {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.jobFormInputLabel {
+    font-size: small;
+    font-weight: 500;
+}
+
+
+.jobFormInput {
+    padding: 8px ;
+    border-radius: 8px;
+    background: none;
+    border: 1px solid rgb(224, 224, 224);
+    font-size: small;
+}
+
+.jobFormInputTest {
+    composes: jobFormInput;
+    display: flex;
+    align-items: center;
+    gap: 8px; 
+}
+
+.jobFormInputTest > input, .jobFormInputTest > select  {
+    border: none;
+    background: none;
+    width: 100%;
+    font-size: small;
+}
+
+
+.scheduleFormSection {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 16px;
+}
+
+.scheduleFormSectionDuration {
+    grid-column: span 2;
+}
+
+
+.customerBtn {
+    border: none;
+    background: none;
+    display: flex;
+    gap: 4px;
+    font-size: small;
+    font-weight: 600;
+    align-items: center;
+    color: blue;
+}
+
+
