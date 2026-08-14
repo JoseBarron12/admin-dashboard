@@ -4,7 +4,7 @@ import defaultPfpPNG from "../assets/react.svg"
 import { useEffect, useState} from "react"
 
 
-export function Header({showSideBar, setShowSideBar}) {
+export function Header({showSideBar, setShowSideBar, showJobWindow, setShowJobWindow}) {
     const [screenWidth, setScreenWidth] = useState(window.innerWidth);
 
     useEffect(() => {
@@ -49,7 +49,9 @@ export function Header({showSideBar, setShowSideBar}) {
                 </div>
                 
                 <div className={styles.headerBtns}>
-                    <button className={styles.headerJobBtn}>
+                    <button className={styles.headerJobBtn} data-testid="jobWindowBtn" onClick={() => {
+                        setShowJobWindow(true);
+                    }}>
                         <Plus className={styles.headerIcon}></Plus>
                         <p>Create Job</p>
                     </button>
