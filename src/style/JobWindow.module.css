@@ -1,7 +1,7 @@
 .jobWindow {
     display: flex;
     flex-direction: column;
-    padding: 32px;
+    padding: 16px  32px;
     gap: 16px;
 }
 
@@ -32,7 +32,7 @@
     align-self: flex-start;
     background: none;
     border: none;
-    
+    margin-top: 8px;
 }
 
 .jobForm {
@@ -130,4 +130,26 @@
     color: blue;
 }
 
+.jobWindowFooter {
+    display: flex;
+    gap: 16px;
+    align-self: flex-end;
+}
 
+.jobWindowFooterBtn {
+    padding: 8px 24px;
+    border-radius: 8px;
+    border: none;
+    background: none;
+}
+
+.jobWindowFooterCancelBtn {
+    composes: jobWindowFooterBtn;
+    border: 1px solid rgb(224, 224, 224);
+}
+
+.jobWindowFooterAddBtn {
+    composes: jobWindowFooterBtn;
+    background-color: black;
+    color: white;
+}

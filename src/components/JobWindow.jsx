@@ -95,13 +95,13 @@ export function JobWindow({setShowJobWindow}) {
                     </div>
                 </fieldset>
             </form>
-            <footer>
-                <button data-testid="jobWindowCloseBtn" onClick={() => {
+            <footer className={styles.jobWindowFooter}>
+                <button className={styles.jobWindowFooterCancelBtn} data-testid="jobWindowCloseBtn" onClick={() => {
                     setShowJobWindow(false);
                 }}>
                     Cancel
                 </button>
-                <button data-testid="jobWindowAddBtn" onClick={() => {
+                <button className={styles.jobWindowFooterAddBtn} data-testid="jobWindowAddBtn" onClick={() => {
                     setShowJobWindow(false);
                 }}>
                     Create Job
