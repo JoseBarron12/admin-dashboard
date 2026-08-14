@@ -1,13 +1,21 @@
-import { Calendar, ClipboardList, Clock, DollarSign, Plus, SquarePen, User } from "lucide-react";
+import { Calendar, ClipboardList, Clock, DollarSign, Plus, SquarePen, User, X } from "lucide-react";
+import styles from "../style/JobWindow.module.css"
 
 export function JobWindow({setShowJobWindow}) {
     return (
-        <dialog data-testid="jobWindow" open>
-            <header>
-                <h1>Create New Job</h1>
-                <p>Schedule a new job and assign it to a an employee.</p>
+        <dialog data-testid="jobWindow" open className={styles.jobWindow}>
+            <header className={styles.jobWindowHeader}>
+                <div>
+                    <h1>Create New Job</h1>
+                    <p>Schedule a new job and assign it to a an employee.</p>
+                </div>
+                <button onClick={() => {
+                    setShowJobWindow(false);
+                    }}>
+                        <X></X>
+                </button>
             </header>
-            <form>
+            <form className={styles.jobForm}>
                 <fieldset>
                     <legend><User></User> <h2>CUSTOMER</h2></legend>
                     <div>
