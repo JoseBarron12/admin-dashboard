@@ -5,14 +5,14 @@ export function JobWindow({setShowJobWindow}) {
     return (
         <dialog data-testid="jobWindow" open className={styles.jobWindow}>
             <header className={styles.jobWindowHeader}>
-                <div>
+                <div className={styles.jobWindowHeaderTxt}>
                     <h1>Create New Job</h1>
                     <p>Schedule a new job and assign it to a an employee.</p>
                 </div>
-                <button onClick={() => {
+                <button className={styles.jobWindowHeaderBtn} onClick={() => {
                     setShowJobWindow(false);
                     }}>
-                        <X></X>
+                        <X className={styles.jobWindowIcon}></X>
                 </button>
             </header>
             <form className={styles.jobForm}>
