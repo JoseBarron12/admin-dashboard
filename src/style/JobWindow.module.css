@@ -8,11 +8,14 @@ dialog ::backdrop
     flex-direction: column;
     padding: 16px  32px;
     gap: 16px;
-    align-self: center;
-    justify-self: center;
     border-radius: 16px;
     border: none;
     box-shadow: 1px 1px 4px black;
+    position: absolute;
+    left: calc(50%);
+    top: calc(50%);
+    transform: translate(calc(-50%), calc(-50%));
+    min-width: 75vw;
 }
 
 
@@ -68,6 +71,7 @@ dialog ::backdrop
     height: 16px;
     width: 16px;
     stroke-width: 2px;
+    flex-shrink: 0;
 }
 
 
@@ -109,6 +113,7 @@ dialog ::backdrop
     display: flex;
     align-items: center;
     gap: 8px; 
+    width: 100%;
 }
 
 .jobFormInputTest > input, .jobFormInputTest > select  {
@@ -117,7 +122,6 @@ dialog ::backdrop
     width: 100%;
     font-size: small;
 }
-
 
 .scheduleFormSection {
     display: grid;
@@ -164,4 +168,15 @@ dialog ::backdrop
     composes: jobWindowFooterBtn;
     background-color: black;
     color: white;
+}
+
+
+
+@media(max-width: 900px) {
+    .jobForm {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6,1fr);
+    height: 500px;
+    overflow-y: scroll;
+    }
 }
