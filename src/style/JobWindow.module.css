@@ -170,6 +170,9 @@ dialog ::backdrop
     color: white;
 }
 
+select:has(option[value=""]:checked) {
+  color: rgb(88, 88, 88);
+}
 
 
 @media(max-width: 900px) {
