@@ -43,7 +43,8 @@ export function Login({}) {
                         </Link>
                 
                     <div className={styles.addSetting}>
-                        <p>Don't have an account? <a href="#" className={styles.link}>Sign up</a></p>
+                        <p>Don't have an account? </p>
+                        <Link to="register" className={styles.register}>Sign Up</Link>
                     </div>
                     </form>
                 </section>
