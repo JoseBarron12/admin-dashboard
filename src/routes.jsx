@@ -3,11 +3,16 @@ import { Work } from "./components/Work";
 import { Notification } from "./components/Notification";
 import { Setting } from "./components/Setting";
 import { Login } from "./components/Login";
+import { Register } from "./components/Register";
 
 const routes = [
     {
         path: "/",
         element: <Login/>,
+    },
+    {
+        path: "register",
+        element: <Register/>,
     },
     {
         path: "home",
