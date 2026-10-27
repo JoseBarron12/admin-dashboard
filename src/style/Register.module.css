@@ -1,0 +1,58 @@
+.registerContainer {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    align-items: center;
+    padding: 0px 526px;
+}
+
+.registerSection {
+    composes: loginSection from "./Login.module.css";
+    padding: 32px;
+    border: 1px solid rgb(92, 92, 92);
+    border-radius: 16px;
+}
+
+.registerSection > header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.registerSection > form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.formInput {
+    composes: formInput from "./Login.module.css"; 
+    
+}
+
+.formIcon {
+    composes: formIcon from "./Login.module.css";
+}
+
+.registerInput {
+    composes: loginInput from "./Login.module.css";
+}
+
+.passwordInput {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+}
+
+.loginBtn {
+    composes: loginBtn from "./Login.module.css";
+}
+
+.addSetting {
+    composes: addSetting from "./Login.module.css";
+}
+
+.loginLink {
+    text-decoration: underline !important;
+}
