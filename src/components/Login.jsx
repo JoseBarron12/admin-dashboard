@@ -3,6 +3,20 @@ import styles from "../style/Login.module.css"
 import {Lock, User } from "lucide-react"
 import { useState } from "react"
 
+async function handleLoginRequest(data) {
+    const request = await fetch("https://backend-crud-garage-production.up.railway.app/auth/login", {
+        method: "POST",
+        headers : {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data)
+    });
+
+    const response = await request.json();
+    console.log(response);
+}
+
+
 export function Login({}) {
     
     const [loginData, setLoginData] = useState({
@@ -62,9 +76,12 @@ export function Login({}) {
                             </div>
                             <a href="#">Forgot Password?</a>
                         </fieldset>
-                        <Link to="home" className={styles.loginBtn}>
-                            <p>Sign In</p>
-                        </Link>
+                        <button className={styles.loginBtn} onClick={(e) => {
+                            e.preventDefault();
+                            handleLoginRequest(loginData);
+                        }}>
+                            <p>Log In</p>
+                        </button>
                 
                     <div className={styles.addSetting}>
                         <p>Don't have an account? </p>
