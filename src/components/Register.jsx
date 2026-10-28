@@ -3,6 +3,21 @@ import { Mail, Phone, User, Lock } from "lucide-react";
 import styles from "../style/Register.module.css"
 import { useState } from "react";
 
+async function handleRegisterRequest(data) {
+    console.log(data)
+    
+    const request = await fetch("https://backend-crud-garage-production.up.railway.app/auth/register", {
+        method: "POST",
+        headers : {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data)
+    });
+
+    const response = await request.json();
+    console.log(response);
+
+}   
 
 export function Register() {
     const [registerData, setRegisterData] = useState({
@@ -107,7 +122,10 @@ export function Register() {
                             </div>
                         </div>
                     </div>
-                    <button className={styles.loginBtn} >
+                    <button className={styles.loginBtn} onClick={(e) => {
+                        e.preventDefault();
+                        handleRegisterRequest(registerData);
+                    }}>
                         <p>Sign Up</p>
                     </button>
 
