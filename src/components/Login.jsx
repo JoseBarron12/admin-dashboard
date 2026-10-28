@@ -1,9 +1,15 @@
 import { Link } from "react-router"
 import styles from "../style/Login.module.css"
 import {Lock, User } from "lucide-react"
+import { useState } from "react"
 
 export function Login({}) {
     
+    const [loginData, setLoginData] = useState({
+        username: "",
+        password: ""
+    })
+
     return (
         <main className={styles.login}>
             <aside>
@@ -15,21 +21,37 @@ export function Login({}) {
                     <form>
                         <fieldset className={styles.credentials}>
                             <div className={styles.formInput}>
-                                <label htmlFor="user-name">
+                                <label htmlFor="username">
                                     Username
                                 </label>
                                 <div>
                                     <User className={styles.formIcon}></User>
-                                    <input className={styles.loginInput} type="text" name="username" id="username" placeholder="Enter your username" />
+                                    <input className={styles.loginInput} 
+                                    value={loginData.username}
+                                    onChange={(e) => {
+                                        setLoginData({
+                                            ...loginData,
+                                            username: e.target.value
+                                        })
+                                    }}
+                                    type="text" name="username" id="username" placeholder="Enter your username" />
                                 </div>
                             </div>
                             <div className={styles.formInput}>
-                                <label htmlFor="user-password">
+                                <label htmlFor="password">
                                     Password
                                 </label>
                                 <div>
                                     <Lock className={styles.formIcon}></Lock>
-                                    <input className={styles.loginInput} type="text" name="user-password" id="user-password" placeholder="Enter your password" />
+                                    <input className={styles.loginInput} 
+                                    value={loginData.password}
+                                    onChange={(e) => {
+                                        setLoginData({
+                                            ...loginData,
+                                            password: e.target.value
+                                        })
+                                    }}
+                                    type="text" name="password" id="password" placeholder="Enter your password" />
                                 </div>
                             </div>
                         </fieldset>
