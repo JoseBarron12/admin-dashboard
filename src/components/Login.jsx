@@ -1,7 +1,9 @@
 import { Link } from "react-router"
 import styles from "../style/Login.module.css"
-import { Mail,Lock } from "lucide-react"
+import {Lock, User } from "lucide-react"
+
 export function Login({}) {
+    
     return (
         <main className={styles.login}>
             <aside>
@@ -14,11 +16,11 @@ export function Login({}) {
                         <fieldset className={styles.credentials}>
                             <div className={styles.formInput}>
                                 <label htmlFor="user-name">
-                                    Email address
+                                    Username
                                 </label>
                                 <div>
-                                    <Mail className={styles.formIcon}></Mail>
-                                    <input className={styles.loginInput} type="text" name="user-name" id="user-name" placeholder="Enter your email" />
+                                    <User className={styles.formIcon}></User>
+                                    <input className={styles.loginInput} type="text" name="username" id="username" placeholder="Enter your username" />
                                 </div>
                             </div>
                             <div className={styles.formInput}>
