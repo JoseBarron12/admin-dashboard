@@ -1,8 +1,19 @@
 import { Link } from "react-router"
 import { Mail, Phone, User, Lock } from "lucide-react";
 import styles from "../style/Register.module.css"
+import { useState } from "react";
+
 
 export function Register() {
+    const [registerData, setRegisterData] = useState({
+        name: "",
+        email: "",
+        phone: "",
+        role: "USER",
+        username: "",
+        password: "",
+    });
+    
     return (
         <div className={styles.registerContainer}>
             <main className={styles.registerSection}>
@@ -15,28 +26,61 @@ export function Register() {
                         <label htmlFor="name">Name</label>
                         <div>
                             <User className={styles.formIcon}/>
-                            <input className={styles.registerInput} type="text" name="name" id="name" placeholder="Enter your name"/>
+                            <input className={styles.registerInput} 
+                            value={registerData.name} 
+                            onChange={(e) => {
+                                setRegisterData({
+                                    ...registerData,
+                                    name: e.target.value
+                                })
+                            }}
+                            type="text" name="name" id="name" placeholder="Enter your name"
+                            />
                         </div>
                     </div>
                     <div className={styles.formInput}>
                         <label htmlFor="username">Username</label>
                         <div>
                             <User className={styles.formIcon}/>
-                            <input className={styles.registerInput} type="text" name="username" id="username" placeholder="Enter your username"/>
+                            <input className={styles.registerInput} 
+                            value={registerData.username} 
+                            onChange={(e) => {
+                                setRegisterData({
+                                    ...registerData,
+                                    username: e.target.value
+                                })
+                            }}
+                            type="text" name="username" id="username" placeholder="Enter your username"/>
                         </div>
                     </div>
                     <div className={styles.formInput}>
                         <label htmlFor="email">Email address</label>
                         <div>
                             <Mail className={styles.formIcon}/>
-                            <input className={styles.registerInput} type="email" name="email" id="email" placeholder="Enter your email"/>
+                            <input className={styles.registerInput} 
+                            value={registerData.email} 
+                            onChange={(e) => {
+                                setRegisterData({
+                                    ...registerData,
+                                    email: e.target.value
+                                })
+                            }}
+                            type="email" name="email" id="email" placeholder="Enter your email"/>
                         </div>
                     </div>
                     <div className={styles.formInput}>
                         <label htmlFor="phone">Phone number</label>
                         <div>
                             <Phone className={styles.formIcon}/>
-                            <input className={styles.registerInput} type="tel" name="phone" id="phone" placeholder="Enter your phone number"/>
+                            <input className={styles.registerInput} 
+                            value={registerData.phone} 
+                            onChange={(e) => {
+                                setRegisterData({
+                                    ...registerData,
+                                    phone: e.target.value
+                                })
+                            }}
+                            type="text" name="phone" id="phone" placeholder="Enter your phone number"/>
                         </div>
                     </div>
                     <div className={styles.passwordInput}>
@@ -44,7 +88,15 @@ export function Register() {
                             <label htmlFor="password">Password</label>
                             <div>
                                 <Lock className={styles.formIcon}/>
-                                <input className={styles.registerInput} type="password" name="password" id="password" placeholder="Enter your password"/>
+                                <input className={styles.registerInput} 
+                                value={registerData.password} 
+                                onChange={(e) => {
+                                setRegisterData({
+                                    ...registerData,
+                                    password: e.target.value
+                                })
+                            }}
+                                type="password" name="password" id="password" placeholder="Enter your password"/>
                             </div>
                         </div>
                         <div className={styles.formInput}>
@@ -55,7 +107,7 @@ export function Register() {
                             </div>
                         </div>
                     </div>
-                    <button className={styles.loginBtn}>
+                    <button className={styles.loginBtn} >
                         <p>Sign Up</p>
                     </button>
 
