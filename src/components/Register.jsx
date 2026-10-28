@@ -1,22 +1,29 @@
 import { Link } from "react-router"
 import { Mail, Phone, User, Lock } from "lucide-react";
 import styles from "../style/Register.module.css"
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 async function handleRegisterRequest(data) {
-    console.log(data)
+    try {
+        const request = await fetch("https://backend-crud-garage-production.up.railway.app/auth/register", {
+            method: "POST",
+            headers : {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data)
+        });
+        
+        const response = await request.json();
+
+        if(!request.ok) {
+            throw new Error(response.errorMsg)
+        }
+        
+        localStorage.setItem('token', response.token)
     
-    const request = await fetch("https://backend-crud-garage-production.up.railway.app/auth/register", {
-        method: "POST",
-        headers : {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data)
-    });
-
-    const response = await request.json();
-    console.log(response);
-
+    } catch(error) {
+        console.error("Error:", error);
+    } 
 }   
 
 export function Register() {
@@ -28,7 +35,7 @@ export function Register() {
         username: "",
         password: "",
     });
-    
+
     return (
         <div className={styles.registerContainer}>
             <main className={styles.registerSection}>

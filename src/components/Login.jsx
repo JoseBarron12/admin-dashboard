@@ -1,21 +1,30 @@
 import { Link } from "react-router"
 import styles from "../style/Login.module.css"
 import {Lock, User } from "lucide-react"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
-async function handleLoginRequest(data) {
-    const request = await fetch("https://backend-crud-garage-production.up.railway.app/auth/login", {
-        method: "POST",
-        headers : {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data)
-    });
+async function handleLoginRequest(data) { 
+    try {
+        const request = await fetch("https://backend-crud-garage-production.up.railway.app/auth/login", {
+            method: "POST",
+            headers : {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data)
+        });
 
-    const response = await request.json();
-    console.log(response);
+        const response = await request.json();
+
+        if(!request.ok) {
+            throw new Error(response.errorMsg)
+        }
+
+        localStorage.setItem('token', response.token)
+    } catch (error) {
+        console.error("Error:", error);
+    }
+
 }
-
 
 export function Login({}) {
     
